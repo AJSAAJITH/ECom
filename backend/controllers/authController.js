@@ -16,7 +16,7 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
     // for develpment
     let BASE_URL = process.env.BACKEND_URL;
 
-    if (BASE_URL === "production") {
+    if (process.env.NODE_ENV === "production") {
         BASE_URL = `${req.protocol}://${get('host')}`
     }
 
@@ -93,7 +93,7 @@ exports.forgetPassword = catchAsyncError(async (req, res, next) => {
         // for develpment
         let BASE_URL = process.env.FRONTEND_URL;
 
-        if(BASE_URL === "production"){
+        if(process.env.NODE_ENV === "production"){
             BASE_URL = `${req.protocol}://${get('host')}`
         }
 
@@ -196,7 +196,7 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
     // for develpment
     let BASE_URL = process.env.BACKEND_URL;
 
-    if (BASE_URL === "production") {
+    if (process.env.NODE_ENV === "production") {
         BASE_URL = `${req.protocol}://${get('host')}`
     }
 
